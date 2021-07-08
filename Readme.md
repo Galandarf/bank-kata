@@ -1,7 +1,14 @@
 # Bank Kata
 
 ## Requirements
-Write a class `Account` that offers the following methods void deposit(int) void withdraw(int) String printStatement()
+1. Write a class `Account` that offers the following methods:
+    - void deposit(int) 
+    - void withdraw(int) 
+    - String printStatement()
+
+2. You are not allowed to add any other method to this class.
+3. Use strings and integers for dates and amounts
+4. Don't worry about spacing in the printed on the console.
 
 An example statement would be:
 
