@@ -3,6 +3,7 @@ package feature
 import io.mockk.Ordering.SEQUENCE
 import io.mockk.mockk
 import io.mockk.verify
+import io.mockk.verifySequence
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 
@@ -13,7 +14,7 @@ class PrintStatementFunctionalTest {
 
     @BeforeTest
     fun begin() {
-        account = Account()
+        account = Account(TransactionRepository())
     }
 
     @Test
@@ -25,10 +26,15 @@ class PrintStatementFunctionalTest {
 
         account.printStatement()
 
-        verify(SEQUENCE) { console.printStatement("Date | Amount | Balance") }
-        verify(SEQUENCE) { console.printStatement("10/06/2021 | 500.00 | 1400.00") }
-        verify(SEQUENCE) { console.printStatement("02/06/2021 | -100.00 | 900.00") }
-        verify(SEQUENCE) { console.printStatement("01/06/2021 | 1000.00 | 1000.00") }
+        verifySequence {
+            verify { console.printStatement("Date | Amount | Balance") }
+            verify { console.printStatement("10/06/2021 | 500.00 | 1400.00") }
+            verify { console.printStatement("02/06/2021 | -100.00 | 900.00") }
+            verify { console.printStatement("01/06/2021 | 1000.00 | 1000.00") }
+        }
+
+
+
     }
 
 }
