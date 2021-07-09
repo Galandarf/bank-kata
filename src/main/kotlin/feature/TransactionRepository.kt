@@ -7,7 +7,8 @@ class TransactionRepository {
     fun addWithdrawal(amount: Int) {
     }
 
-    fun allTransactions() {
+    fun allTransactions(): List<Transaction> {
+        return emptyList()
     }
 
 }

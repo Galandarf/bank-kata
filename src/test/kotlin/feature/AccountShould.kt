@@ -14,8 +14,8 @@ class AccountShould {
     private lateinit var account: Account
 
     @BeforeTest
-    fun begin() {
-        account = Account(transactionRepository)
+    fun initialize() {
+        account = Account(transactionRepository, statementPrinter)
     }
 
     @Test

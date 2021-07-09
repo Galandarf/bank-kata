@@ -12,7 +12,7 @@ class PrintStatementFunctionalTest {
 
     @BeforeTest
     fun begin() {
-        account = Account(TransactionRepository())
+        account = Account(TransactionRepository(), StatementPrinter())
     }
 
     @Test

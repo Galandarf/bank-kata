@@ -1,6 +1,8 @@
 package feature
 
-class Account(private val transactionRepository: TransactionRepository) {
+class Account(
+    private val transactionRepository: TransactionRepository,
+    private val statementPrinter: StatementPrinter) {
 
     fun deposit(amount: Int) {
         transactionRepository.addDeposit(amount)
@@ -11,7 +13,7 @@ class Account(private val transactionRepository: TransactionRepository) {
     }
 
     fun printStatement() {
-
+        statementPrinter.print(transactionRepository.allTransactions())
     }
 
 }
