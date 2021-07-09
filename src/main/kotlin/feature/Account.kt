@@ -10,8 +10,8 @@ class Account(private val transactionRepository: TransactionRepository) {
         transactionRepository.addWithdrawal(amount)
     }
 
-    fun printStatement(): String {
-        TODO("Not yet implemented")
+    fun printStatement() {
+
     }
 
 }
