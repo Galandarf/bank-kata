@@ -38,7 +38,7 @@ class AccountShould {
 
     @Test
     fun `print a statement`() {
-        val transactions = listOf(Transaction())
+        val transactions = listOf(Transaction("09/07/2021", 100))
         `when`(transactionRepository.allTransactions()).thenAnswer { transactions }
 
         account.printStatement()

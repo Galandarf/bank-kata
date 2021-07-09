@@ -7,12 +7,17 @@ import org.mockito.Mockito.verify
 
 class PrintStatementFunctionalTest {
 
-    private lateinit var account: Account
+    private val calendar: Calendar = mock(Calendar::class.java)
     private var console: Console = mock(Console::class.java)
 
+    private lateinit var account: Account
+
     @BeforeTest
-    fun begin() {
-        account = Account(TransactionRepository(), StatementPrinter())
+    fun initialize() {
+        account = Account(
+            TransactionRepository(calendar),
+            StatementPrinter(),
+        )
     }
 
     @Test
