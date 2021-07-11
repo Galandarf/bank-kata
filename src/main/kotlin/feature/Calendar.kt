@@ -5,10 +5,9 @@ import java.time.format.DateTimeFormatter
 
 open class Calendar {
 
-    fun currentDayAsString(): String {
-        val currentDay = today()
-        return currentDay.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-    }
+    private val dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+
+    fun currentDayAsString(): String = today().format(dateFormat)
 
     protected open fun today(): LocalDate = LocalDate.now()
 }
