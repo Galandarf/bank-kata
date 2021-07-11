@@ -1,8 +1,7 @@
 package feature
 
 class Console {
-    fun printStatement(statement: String) {
+    fun printLine(statement: String) {
         TODO("Not yet implemented")
     }
-
 }

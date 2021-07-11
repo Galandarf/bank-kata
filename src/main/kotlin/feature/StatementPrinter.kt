@@ -1,8 +1,10 @@
 package feature
 
-class StatementPrinter {
+class StatementPrinter(val console: Console) {
+    private val statementHeader = "DATE | AMOUNT | BALANCE"
+
     fun print(transactions: List<Transaction>) {
-        TODO("Not yet implemented")
+        console.printLine(statementHeader)
     }
 
 }

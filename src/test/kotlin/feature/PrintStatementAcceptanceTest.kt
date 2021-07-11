@@ -16,7 +16,7 @@ class PrintStatementFunctionalTest {
     fun initialize() {
         account = Account(
             TransactionRepository(calendar),
-            StatementPrinter(),
+            StatementPrinter(console),
         )
     }
 
@@ -28,9 +28,9 @@ class PrintStatementFunctionalTest {
 
         account.printStatement()
 
-        verify(console).printStatement("Date | Amount | Balance")
-        verify(console).printStatement("10/06/2021 | 500.00 | 1400.00")
-        verify(console).printStatement("02/06/2021 | -100.00 | 900.00")
-        verify(console).printStatement("01/06/2021 | 1000.00 | 1000.00")
+        verify(console).printLine("Date | Amount | Balance")
+        verify(console).printLine("10/06/2021 | 500.00 | 1400.00")
+        verify(console).printLine("02/06/2021 | -100.00 | 900.00")
+        verify(console).printLine("01/06/2021 | 1000.00 | 1000.00")
     }
 }
