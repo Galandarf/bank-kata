@@ -18,7 +18,7 @@ class StatementPrinter(private val console: Console) {
     private fun printStatementLines(transactions: List<Transaction>) {
         val runningBalance = AtomicInteger(0)
         transactions.map { transaction -> statementLine(transaction, runningBalance)
-        }.sortedDescending().forEach { statementLine -> printStatement(statementLine) }
+        }.reversed().forEach { statementLine -> printStatement(statementLine) }
     }
 
     private fun statementLine(transaction: Transaction, runningBalance: AtomicInteger): String {
