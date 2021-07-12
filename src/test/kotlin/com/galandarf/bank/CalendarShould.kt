@@ -1,6 +1,7 @@
-package feature
+package com.galandarf.bank
 
 import java.time.LocalDate
+import com.galandarf.bank.Calendar
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

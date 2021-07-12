@@ -1,5 +1,9 @@
-package feature
+package com.galandarf.bank
 
+import com.galandarf.bank.transaction.Transaction
+import com.galandarf.bank.transaction.TransactionRepository
+import com.galandarf.bank.Account
+import com.galandarf.bank.StatementPrinter
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import org.mockito.Mockito.`when`

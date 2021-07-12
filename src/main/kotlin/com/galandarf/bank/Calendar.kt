@@ -1,4 +1,4 @@
-package feature
+package com.galandarf.bank
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

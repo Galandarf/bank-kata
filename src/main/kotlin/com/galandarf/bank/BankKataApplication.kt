@@ -1,4 +1,6 @@
-package feature
+package com.galandarf.bank
+
+import com.galandarf.bank.transaction.TransactionRepository
 
 fun main() {
 
@@ -11,6 +13,7 @@ fun main() {
     account.deposit(1000)
     account.withdraw(100)
     account.deposit(2000)
+    account.withdraw(1033)
 
     account.printStatement()
 }

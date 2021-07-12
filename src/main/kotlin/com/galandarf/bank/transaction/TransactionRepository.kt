@@ -1,5 +1,6 @@
-package feature
+package com.galandarf.bank.transaction
 
+import com.galandarf.bank.Calendar
 import java.util.Collections.unmodifiableList
 
 class TransactionRepository(private val calendar: Calendar) {
@@ -18,5 +19,4 @@ class TransactionRepository(private val calendar: Calendar) {
     fun allTransactions(): List<Transaction> {
         return unmodifiableList(transactions)
     }
-
 }

@@ -1,5 +1,8 @@
-package feature
+package com.galandarf.bank
 
+import com.galandarf.bank.transaction.Transaction
+import com.galandarf.bank.Console
+import com.galandarf.bank.StatementPrinter
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import org.mockito.Mockito.inOrder
@@ -21,7 +24,7 @@ internal class StatementPrinterShould {
     fun `always print the header`() {
         statementPrinter.print(noTransactions)
 
-        verify(console).printLine("DATE | AMOUNT | BALANCE")
+        verify(console).printLine("\t  DATE | AMOUNT | BALANCE")
     }
 
     @Test
@@ -35,7 +38,7 @@ internal class StatementPrinterShould {
         statementPrinter.print(transactions)
 
         val inOrder = inOrder(console)
-        inOrder.verify(console).printLine("DATE | AMOUNT | BALANCE")
+        inOrder.verify(console).printLine("\t  DATE | AMOUNT | BALANCE")
         inOrder.verify(console).printLine("10/06/2021 | 500.00 | 1400.00")
         inOrder.verify(console).printLine("02/06/2021 | -100.00 | 900.00")
         inOrder.verify(console).printLine("01/06/2021 | 1000.00 | 1000.00")

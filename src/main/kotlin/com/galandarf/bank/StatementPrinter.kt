@@ -1,13 +1,12 @@
-package feature
+package com.galandarf.bank
 
+import com.galandarf.bank.transaction.Transaction
 import java.text.DecimalFormat
-import java.util.Collections
 import java.util.concurrent.atomic.AtomicInteger
-import javax.swing.text.NumberFormatter
 
 class StatementPrinter(private val console: Console) {
 
-    private val statementHeader = "DATE | AMOUNT | BALANCE"
+    private val statementHeader = "\t  DATE | AMOUNT | BALANCE"
     private val decimalFormatter = DecimalFormat("#.00")
 
     fun print(transactions: List<Transaction>) {
@@ -30,5 +29,4 @@ class StatementPrinter(private val console: Console) {
     private fun printStatement(statementLine: String){
         console.printLine(statementLine)
     }
-
 }

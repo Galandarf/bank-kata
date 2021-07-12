@@ -1,8 +1,11 @@
-package feature
+package com.galandarf.bank
+
+import com.galandarf.bank.transaction.TransactionRepository
 
 class Account(
     private val transactionRepository: TransactionRepository,
-    private val statementPrinter: StatementPrinter) {
+    private val statementPrinter: StatementPrinter
+) {
 
     fun deposit(amount: Int) {
         transactionRepository.addDeposit(amount)
@@ -15,5 +18,4 @@ class Account(
     fun printStatement() {
         statementPrinter.print(transactionRepository.allTransactions())
     }
-
 }

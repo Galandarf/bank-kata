@@ -1,5 +1,8 @@
-package feature
+package com.galandarf.bank.transaction
 
+import com.galandarf.bank.Calendar
+import com.galandarf.bank.transaction.Transaction
+import com.galandarf.bank.transaction.TransactionRepository
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
